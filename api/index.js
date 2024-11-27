@@ -2,7 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 dotenv.config();
-mongoose.connect(process.env.MONGO)
+mongoose.connect(process.env.MONGO)   //add .env to gitignore 
 .then(()=>{
     console.log('connect to moongo db');
 })
