@@ -4,7 +4,9 @@ import dotenv from 'dotenv';
 import userRouter from './routes/user.route.js';
 import authRouter from './routes/auth.route.js';
 dotenv.config();
-mongoose.connect(process.env.MONGO)   //add .env to gitignore 
+
+mongoose.connect(process.env.MONGO)   
+//add .env to gitignore 
 .then(()=>{
     console.log('connect to moongo db');
 })
@@ -20,3 +22,12 @@ app.listen(3000, () =>{
 });
 app.use('/api/user',userRouter);
 app.use('/api/auth',authRouter);
+app.use((err,req,res,next)=>{
+    const statusCode =err.statusCode || 500;
+    const message=err.message || 'internal server error';
+    return res.status(statusCode).json({
+        success:false,
+        statusCode,
+        message,
+    });
+});
