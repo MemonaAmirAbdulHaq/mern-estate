@@ -15,9 +15,10 @@ const userSchema =new mongoose.Schema({
         required:true,
        
     },
-    avatar:{
+    avator:{
         type:String,
-        default:"https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png",
+        //default:"img.jpg"
+        default:"https://i.pinimg.com/736x/5c/7c/80/5c7c8044238a6384d8fd05f94c00bf67.jpg",
 
     },
 

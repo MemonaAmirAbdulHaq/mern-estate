@@ -54,6 +54,8 @@ export default function SignIp() {
           placeholder='email'
           className='border p-3 rounded-lg'
           id='email'
+          autoComplete="email"
+          required
           onChange={handleChange}
         />
         <input
@@ -61,6 +63,8 @@ export default function SignIp() {
           placeholder='password'
           className='border p-3 rounded-lg'
           id='password'
+          autoComplete="current-password"
+           required
           onChange={handleChange}
         />
 
